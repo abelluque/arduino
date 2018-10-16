@@ -35,6 +35,6 @@ void loop(){
       digitalWrite(redLightPin, LOW);
       digitalWrite(greenLightPin, HIGH);
   }
-  delay(500);
+  //delay(500);
 }
 
