@@ -1,9 +1,9 @@
 /**
-Developer Abel Luque
+Developer: Abel Luque
+E-mail: abel.luque@gmail.com
 
 Sensor de barrera, con indicadores LED rojo y verde
 A ser utilizado para indicar si la cerradura domiciliaria se encuentra cerrada con llave
-
 */
 
 /*Inicializo el PIM para el sensor*/
@@ -14,7 +14,7 @@ const int redLightPin = 11;
 
 /*Inicializo el PIM para el LED verde*/
 const int greenLightPin = 12;
- 
+
 void setup() {
   Serial.begin(9600);   //iniciar puerto serie
   pinMode(sensorPin , INPUT);  //definir pin como entrada
@@ -27,14 +27,14 @@ void loop(){
   value = digitalRead(sensorPin );  //lectura digital de pin
  
   if (value == HIGH) {
-      Serial.println("Cerrado");
-      digitalWrite(redLightPin, LOW);
-      digitalWrite(greenLightPin, HIGH);
-  }else{
       Serial.println("Abierto");
       digitalWrite(greenLightPin, LOW);
       digitalWrite(redLightPin, HIGH);
+  }else{
+      Serial.println("Cerrado");
+      digitalWrite(redLightPin, LOW);
+      digitalWrite(greenLightPin, HIGH);
   }
-  delay(3000);
+  delay(500);
 }
 
